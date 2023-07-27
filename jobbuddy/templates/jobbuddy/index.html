@@ -1,0 +1,91 @@
+{% extends 'jobbuddy/layout.html' %}
+{% load static %}
+{% block script %}
+<script src="{% static 'jobbuddy/index.js' %}"></script>
+{% endblock %}
+{% block body %}
+<div class="loader-container">
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div style="padding-top: 85px; padding-bottom: 24px; display: grid; place-items: end; padding-right: 24px; position: fixed; width: 95vw; padding-right: 24px;"
+    class="switch-container">
+    <div style="display: flex; align-items: center;">
+        <span>
+            <small class="active">
+                Active
+            </small>
+        </span>
+        <label class="switch mx-2">
+            <input type="checkbox">
+            <span class="slider slide round"></span>
+        </label>
+        <span>
+            <small class="archived">
+                Archived
+            </small>
+        </span>
+    </div>
+</div>
+<div class="board">
+    <div class="column">
+        <div class="column-title">
+            <div>Not Applied</div>
+            <span class="not-applied"></span>
+        </div>
+        <div class="sortable-list card1" data-stage="NOT_APPLIED">
+            <!-- Add more tasks here -->
+
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-title">
+            <div>Applied</div>
+            <span class="applied"></span>
+        </div>
+        <div class="sortable-list card2" data-stage="APPLIED">
+            <!-- Add tasks here -->
+
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-title">
+            <div>First Interview</div>
+            <span class="first-interview"></span>
+        </div>
+        <div class="sortable-list card3" data-stage="FIRST_INTERVIEW">
+            <!-- Add tasks here -->
+
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-title">
+            <div>Follow-up Interviews</div>
+            <span class="follow-up-interviews"></span>
+        </div>
+        <div class="sortable-list card4" data-stage="FOLLOW_UP_INTERVIEWS">
+            <!-- Add tasks here -->
+
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-title">
+            <div>Offer</div>
+            <span class="offer"></span>
+        </div>
+        <div class="sortable-list card5" data-stage="OFFER">
+            <!-- Add tasks here -->
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

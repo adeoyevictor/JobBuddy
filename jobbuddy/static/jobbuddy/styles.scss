@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+
+    background-color: #fafafa;
+}
+
+.navbar {
+    background-color: #25ade7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+}
+
+.body {
+    background-color: #fafafa;
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 17px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 13px;
+        width: 13px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #25ade7;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #25ade7;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 17px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .board {
+        background-color: #fafafa;
+        width: 1440px;
+        min-height: calc(100vh - 56px);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 30px;
+        padding-top: 150pX;
+
+        .column {
+            .column-title {
+                margin-bottom: 8px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #cef;
+                padding-left: 24px;
+                position: relative;
+
+                div {
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+
+                span {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 12px;
+                    color: #7f7f7f;
+                    border-radius: 11px;
+                    border: 1px solid #7f7f7f;
+                    text-align: center;
+                    padding-left: 0.02px;
+                }
+            }
+
+            .column-title::before {
+                content: "";
+                height: 0;
+                width: 0;
+                position: absolute;
+                border-width: 28px 0 28px 22px;
+                border-color: transparent transparent transparent #cef;
+                border-style: solid;
+                left: 264px;
+                top: 0;
+            }
+
+            .sortable-list {
+                .item {
+                    position: relative;
+                    border-right-width: 3px;
+                    border-right-style: solid;
+                    background-color: #fff;
+                    margin-bottom: 6px;
+                    box-shadow: 0 1px 2px 0 #bfbfbf;
+                    padding: 6px;
+                    font-size: 12px;
+                    cursor: pointer;
+
+                    h4 {
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-bottom: 4px;
+                    }
+
+                    p {
+                        margin-bottom: 4px;
+                        color: #00b3cb;
+                    }
+
+                    span {
+                        color: #00b3cb;
+                    }
+
+                    .icons {
+                        position: absolute;
+                        bottom: 6px;
+                        right: 6px;
+                    }
+                }
+
+
+            }
+        }
+
+
+    }
+
+    .job-form {
+        .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            div {
+                width: 50px;
+                margin-right: 16px;
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin-right: 8px;
+                }
+
+                label {
+                    width: 25px;
+                    height: 12px;
+                }
+            }
+        }
+
+
+    }
+}
+
+input[type='submit'] {
+    display: block;
+    margin: 0 auto;
+    margin-top: 32px;
+    background-color: #25ade7;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+input[type='submit']:hover,
+input[type='submit']:active,
+input[type='submit']:focus {
+    background-color: #25ade7;
+}
+
+form {
+    width: 75%;
+    max-width: 768px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+// #25ade7
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #25ade7 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 56px);
+}
+
+i {
+    font-size: 16px;
+}
+
+i.bi-archive {
+    color: #007BFF;
+}
+
+i.bi-trash {
+    color: red;
+}

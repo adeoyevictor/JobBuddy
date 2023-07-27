@@ -1,0 +1,102 @@
+{% extends 'jobbuddy/layout.html' %}
+{% load static %}
+{% block script %}
+<script src="{% static 'jobbuddy/add.js' %}"></script>
+{% endblock %}
+{% block body %}
+<h1 class="text-center mb-4" style="padding-top: 100px;">Add Job Card</h1>
+<form class="job-form ">
+    <div class="form-group mb-3">
+        <input class="form-control" type="text" placeholder="Job Title" id="title" autocomplete="off" required>
+    </div>
+    <div class="form-group  mb-3">
+        <input class="form-control" type="text" placeholder="Company Name" id="company" autocomplete="off" required>
+    </div>
+    <div class="form-group  mb-3">
+        <input class="form-control" type="text" placeholder="Job Location" id="location" autocomplete="off" required>
+    </div>
+    <div class="form-group  mb-3">
+        <input class="form-control" type="text" placeholder="Job Posting URL" id="url" autocomplete="off" required>
+    </div>
+    <div class="form-group  mb-3">
+        <textarea id="description" rows="4" cols="50" class="form-control" placeholder="Job Description"
+            autocomplete="off" required></textarea>
+    </div>
+    <div class="form-group  mb-3">
+        <label for="level">Job Level</label>
+        <select class="form-control" id="level" required>
+            <option disabled selected>Choose Option</option>
+            <option value="INTERNSHIP">INTERNSHIP</option>
+            <option value="ENTRY_LEVEL">ENTRY LEVEL</option>
+            <option value="MID_LEVEL">MID LEVEL</option>
+            <option value="SENIOR_LEVEL">SENIOR LEVEL</option>
+        </select>
+    </div>
+    <div class="form-group  mb-3">
+        <label for="mode">Job Mode</label>
+        <select class="form-control" id="mode" required>
+            <option disabled selected>Choose Option</option>
+            <option value="FULL_TIME">FULL TIME</option>
+            <option value="PART_TIME">PART TIME</option>
+            <option value="CONTRACT">CONTRACT</option>
+        </select>
+    </div>
+    <div class="form-group  mb-3">
+        <label for="stage">Job Stage</label>
+        <select class="form-control" id="stage" required>
+            <option disabled selected>Choose Option</option>
+            <option value="NOT_APPLIED">NOT APPLIED</option>
+            <option value="APPLIED">APPLIED</option>
+            <option value="FIRST_INTERVIEW">FIRST INTERVIEW</option>
+            <option value="FOLLOW_UP_INTERVIEWS">FOLLOW UP INTERVIEWS</option>
+            <option value="OFFER">OFFER</option>
+        </select>
+    </div>
+    <div class="form-group  mb-3">
+        <label for="dateInput">Select Job Posting Date:</label>
+        <input type="date" class="form-control" id="posting_date" required>
+    </div>
+    <p>Select Color Label</p>
+    <div class="form-check form-check-inline">
+        <div>
+            <input class="form-check-input" type="radio" id="#5350E3" value="#5350E3" name="color">
+            <label for="#5350E3" style="background-color: #5350E3;">
+            </label>
+        </div>
+        <div>
+
+            <input class="form-check-input" type="radio" id="#25ADE7" value="#25ADE7" name="color">
+            <label for="#25ADE7" style="background-color: #25ADE7;">
+            </label>
+        </div>
+        <div>
+            <input class="form-check-input" type="radio" id="#2AD587" value="#2AD587" name="color">
+            <label for="#2AD587" style="background-color: #2AD587;">
+            </label>
+        </div>
+
+        <div>
+            <input class="form-check-input" type="radio" id="#FFF500" value="#FFF500" name="color">
+            <label for="#FFF500" style="background-color: #FFF500;">
+            </label>
+        </div>
+        <div>
+            <input class="form-check-input" type="radio" id="#FF7C00" value="#FF7C00" name="color">
+            <label for="#FF7C00" style="background-color: #FF7C00;">
+            </label>
+        </div>
+        <div>
+            <input class="form-check-input" type="radio" id="#E350D8" value="#E350D8" name="color">
+            <label for="#E350D8" style="background-color: #E350D8;">
+            </label>
+        </div>
+        <div>
+            <input class="form-check-input" type="radio" id="#9012FE" value="#9012FE" name="color">
+            <label for="#9012FE" style="background-color: #9012FE;">
+            </label>
+        </div>
+    </div>
+
+    <input type="submit" value="Add Job Card">
+</form>
+{% endblock %}

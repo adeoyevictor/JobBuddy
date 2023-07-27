@@ -1,0 +1,49 @@
+{% extends 'jobbuddy/layout.html' %}
+
+{% block body %}
+
+<h2 class="text-center" style="padding-top: 100px; padding-bottom: 32px;">Job Details</h2>
+{% if message %}
+<div class="mb-4 alert alert-danger">{{ message }}</div>
+{% else %}
+<h4>
+    {{ job.title }}
+</h4>
+<h6>{{ job.company }}, {{ job.location }}</h6>
+<p class="mb-1">
+    <small>
+        Date Added: {{job.timestamp}}
+    </small>
+</p>
+<p class="mb-1">
+    <small>
+        Level: {{job.level}}
+    </small>
+</p>
+<p class="mb-1">
+    <small>
+        Mode: {{job.mode}}
+    </small>
+</p>
+<p class="mb-1">
+    <small>
+        Stage: {{job.stage}}
+    </small>
+</p>
+<p class="mb-1">
+    <small>
+        Archived: {% if job.archived %} Yes {% else %} No {% endif %}
+    </small>
+</p>
+<a href="{{ job.url }}" target="_blank" class="text-dark">Job Posting Url</a>
+
+<div class="mt-4" style="padding-bottom: 100px; text-align: justify;">
+    <small>
+        {{job.description}}
+    </small>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
